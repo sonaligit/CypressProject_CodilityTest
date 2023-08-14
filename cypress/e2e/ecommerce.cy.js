@@ -22,6 +22,9 @@ describe('Login to SauceDemoSite', function(){
     })
 
     it('Validate Products are added to Cart', function(){
+        objLoginPage.enterUserName(test_data.username)
+        objLoginPage.enterPassword(test_data.password)
+        objLoginPage.clickLogin()
         objProductPage.clickAddToCartButtonBackPack()
         objProductPage.clickAddToCartButtonBikeLight()
         objProductPage.clickShoppingCartContainer()
@@ -31,6 +34,9 @@ describe('Login to SauceDemoSite', function(){
     })
 
     it('Validate Logout Functionality', () =>{
+        objLoginPage.enterUserName(test_data.username)
+        objLoginPage.enterPassword(test_data.password)
+        objLoginPage.clickLogin()
         objLogoutPage.clickBurgerMenu()
         objLogoutPage.clickLogoutButton()
         objLoginPage.validateLoginPage()
